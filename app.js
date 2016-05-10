@@ -38,14 +38,20 @@ for(var i = 0; i < squares.length; i = i + 1) {
       var result = false;
       if (getId(a) == move && getId(b) == move && getId(c) == move) {
       result = true;
-    } return result
-
-      }
-
+      } return result
     }
-    function getWinner() {
-      if (currentPlayer.marker == ) {
-      }
+    function getWinner(move) {
+      var result = false;
+      if (check(1, 2, 3, move)||
+        check(4, 5, 6, move)||
+        check(7, 8, 9, move)||
+        check(1, 4, 7, move)||
+        check(2, 5, 8, move)||
+        check(3, 6, 9, move)||
+        check(1, 5, 7, move)||
+        check(3, 5, 7, move)) {
+          result = true;
+      } return result
     }
     switchTurns()
   })
