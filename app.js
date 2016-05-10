@@ -23,14 +23,30 @@ for(var i = 0; i < squares.length; i = i + 1) {
   squares[i].addEventListener('click', function(){
     console.log(this)
     // check if the square has already been marked
+    //  mark an x or an o
     function playerMove(square) {
       if (square.innerHTML == "") {
         square.innerHTML = currentPlayer.marker;
       }
     }
-    //  mark an x or an o
     // check to see if there's a winner
     playerMove(this)
+    function getId(number) {
+      return document.getElementById('s' + number).innerHTML
+    }
+    function check(a, b, c, move) {
+      var result = false;
+      if (getId(a) == move && getId(b) == move && getId(c) == move) {
+      result = true;
+    } return result
+
+      }
+
+    }
+    function getWinner() {
+      if (currentPlayer.marker == ) {
+      }
+    }
     switchTurns()
   })
 }
